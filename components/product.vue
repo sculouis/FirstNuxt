@@ -1,7 +1,7 @@
 <template>
   <div>
   <b-card
-    title="Card Title"
+    v-bind:title="title"
     v-bind:img-src="imgsrc"
     img-alt="Image"
     img-top
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    props:["text","imgsrc"]
+    props:["text","imgsrc","title"]
 
 }
 </script>
