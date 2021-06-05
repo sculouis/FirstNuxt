@@ -2,19 +2,23 @@
 <div>
     <div class="container">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-       <NuxtLink to="/aboutus"><a class="btn btn-light" href="#">最新活動</a></NuxtLink>
+       <NuxtLink to="/aboutus">
+        <a class="btn btn-light" href="#">最新活動</a>
+       </NuxtLink>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="btn btn-light" href="limited.html">季節限定 <span class="sr-only">(current)</span></a>
+                    <NuxtLink to="limited">
+                        <a class="btn btn-light" href="#">季節限定 <span class="sr-only">(current)</span></a>
+                    </NuxtLink>
                 </li>
 
                 <li class="nav-item active">
-                  <NuxtLink to="/products">
-                    <a class="btn btn-light" href="products.html">經典商品 <span class="sr-only">(current)</span></a>
+                  <NuxtLink to="/productlist">
+                    <a class="btn btn-light" href="#">經典商品 <span class="sr-only">(current)</span></a>
                   </NuxtLink>
                 </li>
 

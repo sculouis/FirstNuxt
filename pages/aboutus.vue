@@ -5,7 +5,6 @@
 
 <script>
 export default {
-    layout:"about"
 
 }
 </script>
