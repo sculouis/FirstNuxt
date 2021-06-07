@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <NuxtLink to="limited">
+                    <NuxtLink to="/limited">
                         <a class="btn btn-light" href="#">季節限定 <span class="sr-only">(current)</span></a>
                     </NuxtLink>
                 </li>
