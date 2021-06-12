@@ -27,12 +27,13 @@
                 </li>
 
             </ul>
-            <form class="form-inline">
-                <a class="btn btn-light" href="login.html">會員登入</a>
-
-                <a class="btn btn-outline-secondary" href="newmember.html" role="button">會員註冊</a>
-
-            </form>
+            <div class="form-inline">
+                <NuxtLink to="/shoppingcart">
+                    <a class="btn btn-success" href="#" role="button">購物清單</a>                   
+                </NuxtLink>
+                    <a class="btn btn-light" href="login.html">會員登入</a>
+                    <a class="btn btn-outline-secondary" href="newmember.html" role="button">會員註冊</a>
+            </div>
         </div>
     </nav>
         <Nuxt />

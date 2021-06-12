@@ -4,18 +4,23 @@
         <b-card-text>
             {{text}}
         </b-card-text>
-
-        <b-button v-on:click="add()" variant="primary">＋</b-button>
-        <p>{{ count }}</p>
-        <b-button v-on:click="sub()" variant="primary">-</b-button>
-        <b-button variant="danger">加入購物車</b-button>
+        <div class="m-2">
+            <b-button v-on:click="add()" variant="primary">＋</b-button>
+            <span>
+                <strong>
+                    {{ count }}
+                </strong>
+            </span>
+            <b-button v-on:click="sub()" variant="primary">-</b-button>
+        </div>
+        <b-button variant="danger" @click="addCart">加入購物車</b-button>
     </b-card>
 </div>
 </template>
 
 <script>
 export default {
-    props: ["text", "imgsrc", "title"],
+    props: ["id","text", "imgsrc", "title"],
     data: function () {
         return {
             count: 1,
@@ -33,6 +38,9 @@ export default {
                 this.count = 1
             }
 
+        },
+        addCart(){
+            this.$store.commit('addProduct', {id:this.id,count:this.count})
         }
 
     }
