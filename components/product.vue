@@ -45,7 +45,11 @@ export default {
             if (yes) {
                 this.$store.commit('addProduct', {
                     id: this.id,
-                    count: this.count
+                    count: this.count,
+                    text: this.text,
+                    price: this.price,
+                    imgsrc: this.imgsrc,
+                    title: this.title
                 })
             } 
         }

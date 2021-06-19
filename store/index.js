@@ -58,32 +58,19 @@ export const mutations = {
     state.counter++
   },
   addProduct(state, payLoad) {
-    //陣列尋找是否有此商品
-    var obj = state.cart.find(function (item) {
-      return item.id == payLoad.id;
-    })
-
-    if (obj) {
-      //找到後數量相加
-      obj.count = obj.count + payLoad.count;
-    } else {
-      //商品的第一次應該不在購物車
-      //應該是該商品的第一次
-      var findObj;
-      state.products2.forEach(function (item) {
-        if (!findObj) {
-          findObj = item.find(function (product) {
-            return product.id == payLoad.id;
-          })
-        }
+    if (state.cart.length > 0) {
+      //陣列尋找是否有此商品
+      var obj = state.cart.find(function (item) {
+        return item.id == payLoad.id;
       });
-
-      if (findObj) {
-        //找到後放上數量
-        findObj.count = payLoad.count;
+      if (obj) {
+        //找到後數量相加
+        obj.count = obj.count + payLoad.count;
+      }else{
+        state.cart.push(payLoad);
       }
-      state.cart.push(findObj);
+    } else {
+      state.cart.push(payLoad);
     }
-
   }
 }
