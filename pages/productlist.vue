@@ -14,7 +14,7 @@
     </div>
     <div class="row m-1" v-for="products,index in products2" v-bind:key="index">
         <div class="col" v-for="product,index in products" v-bind:key="index">
-            <product v-bind:id="product.id" v-bind:text="product.text" v-bind:imgsrc="product.imgsrc" v-bind:title="product.title">
+            <product v-bind:id="product.id" v-bind:text="product.text" v-bind:imgsrc="product.imgsrc" v-bind:title="product.title" v-bind:price="product.price">
             </product>
         </div>
     </div>

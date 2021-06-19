@@ -1,8 +1,9 @@
 <template>
 <div>
-    <b-card v-bind:title="title" v-bind:img-src="imgsrc" img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
+    <b-card :title="title" :img-src="imgsrc" img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
         <b-card-text>
-            {{text}}
+            <p>{{text}}</p>
+            <p>{{price}}</p>
         </b-card-text>
         <div class="m-2">
             <b-button v-on:click="add()" variant="primary">＋</b-button>
@@ -20,7 +21,7 @@
 
 <script>
 export default {
-    props: ["id","text", "imgsrc", "title"],
+    props: ["id", "text", "imgsrc", "title","price"],
     data: function () {
         return {
             count: 1,
@@ -39,8 +40,14 @@ export default {
             }
 
         },
-        addCart(){
-            this.$store.commit('addProduct', {id:this.id,count:this.count})
+        addCart() {
+            var yes = confirm('你確定嗎？');
+            if (yes) {
+                this.$store.commit('addProduct', {
+                    id: this.id,
+                    count: this.count
+                })
+            } 
         }
 
     }
