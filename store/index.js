@@ -48,8 +48,13 @@ export const state = function () {
       ]
 
     ],
-    cart: []
-
+    cart: [],
+    member:{
+      id: "",
+      firstname: "",
+      lastname: "",
+      address: ""
+    }
   }
 }
 
@@ -72,5 +77,8 @@ export const mutations = {
     } else {
       state.cart.push(payLoad);
     }
+  },
+  getMember(state,payLoad){
+    state.member = payLoad;
   }
 }

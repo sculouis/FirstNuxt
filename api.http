@@ -1,0 +1,19 @@
+POST http://localhost:3001/orders
+content-type: application/json
+
+{
+      "id": "B10",
+      "memberId": "A01",
+      "orderItems": [
+        {
+          "id": "C01",
+          "productId": "1",
+          "quantity": "2"
+        },
+        {
+          "id": "C02",
+          "productId": "2",
+          "quantity": "2"
+        }
+      ]
+}
