@@ -50,15 +50,10 @@ export default {
                     imgsrc: "https://cdn.bella.tw/files/L%E2%80%99OCCITANE%E5%8E%9F%E9%87%8E%E4%B9%8B%E5%BF%83%E8%8A%B1%E8%88%9E%E8%AD%B7%E6%89%8B%E9%9C%9C%2030ml%EF%BC%8FNT_400.jpg"
                 }
             ],
-            products2:[],
             searchText: ""
+
         };
 
-    },
-    async fetch() {
-      this.products2 = await fetch(
-        'http://localhost:3001/products'
-      ).then(res => res.json())
     },
     methods: {
         //將陣列幾個分一組
@@ -92,6 +87,9 @@ export default {
                 arr = this.products1;
             }
             return this.sliceArray(arr, 3)
+        },
+        products2: function(){
+            return this.$store.state.products2;
         }
     }
 }
